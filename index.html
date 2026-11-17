@@ -30,7 +30,10 @@
 
   /* top bar */
   .bar { display: flex; justify-content: space-between; padding: 28px 0; }
-  .bar nav { display: flex; gap: 28px; }
+  .bar nav { display: flex; gap: 28px; align-items: center; }
+  .avatar { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--ink); display: block; object-fit: cover; margin-left: 6px; }
+  .bar .right { display: flex; align-items: center; gap: 28px; }
+  a.ext::after { content: " \2197"; font-family: var(--mono); font-size: .45em; color: var(--mute); vertical-align: .55em; }
 
   /* hero */
   .hero { padding: 9vh 0 10vh; }
@@ -96,6 +99,7 @@
       <a href="#projects">Projects</a>
       <a href="#study">Study</a>
       <a href="#contact">Contact</a>
+      <img class="avatar" src="data:image/jpeg;base64,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" width="160" height="160" alt="Camiel Schroeder">
     </nav>
   </div>
 
@@ -116,7 +120,7 @@
     <div class="label mono"><span>01</span>About</div>
     <div>
       <p class="about">I study computer science at Middlebury, but most of my time goes to <em>econometrics</em>, running things I care about, and a podcast about wanting better things.</p>
-      <p class="small">Recent work includes damages models for antitrust, biopharma and tax cases at Analysis Group, a county-level dataset built from scans of 1961 Freedom Ride archives, and a summer teaching Python to high school students at Brown. Outside class I organise Effective Altruism events at Middlebury and have fundraised for the Against Malaria Foundation. I'm still learning most of this as I go.</p>
+      <p class="small">Recent work includes damages models for antitrust, biopharma and tax cases at <a href="https://www.analysisgroup.com">Analysis Group</a>, a county-level dataset built from scans of 1961 Freedom Ride archives, and a summer teaching Python to high school students at <a href="https://www.brown.edu">Brown</a>. Outside class I organise <a href="https://www.effectivealtruism.org">Effective Altruism</a> events at Middlebury and have fundraised for the <a href="https://www.againstmalaria.com">Against Malaria Foundation</a>. I'm still learning most of this as I go.</p>
     </div>
   </section>
 
@@ -124,26 +128,18 @@
     <div class="label mono"><span>02</span>Work</div>
     <div>
       <div class="row">
-        <div class="when mono">From spring 2027</div>
-        <div>
-          <h3>Analyst</h3>
-          <div class="org">Analysis Group · full-time</div>
-          <p>Returning after my summer analyst role to join full-time.</p>
-        </div>
-      </div>
-      <div class="row">
         <div class="when mono">Sep – Dec 2026</div>
         <div>
-          <h3>Research Coordinator</h3>
-          <div class="org">Research Impact Oxford</div>
+          <h3><a class="ext" href="https://www.effectivealtruism.org/opportunities/recG6On7ROUTTrbKz">Research Impact Oxford</a></h3>
+          <div class="org">Research Coordinator</div>
           <p>Recruiting mentors in AI safety, AI governance and animal welfare via EAG outreach, then helping mentors and mentees scope projects and keep each other accountable.</p>
         </div>
       </div>
       <div class="row">
-        <div class="when mono">Jun – Aug 2026</div>
+        <div class="when mono">2026 – 2027</div>
         <div>
-          <h3>Summer Analyst</h3>
-          <div class="org">Analysis Group, Washington DC</div>
+          <h3><a class="ext" href="https://www.analysisgroup.com">Analysis Group</a></h3>
+          <div class="org">Summer Analyst in Washington DC, then full-time Analyst from spring 2027</div>
           <p>Estimated counterfactual "but-for" outcomes across 4 antitrust, biopharma and tax matters, using regression models in R and Stata on 500,000+ observations.</p>
           <p>Cleaned and merged 10k+ raw sources per matter and used fixed-effects panel models to isolate causal effects, producing damages estimates from $40M to $500M.</p>
         </div>
@@ -151,32 +147,32 @@
       <div class="row">
         <div class="when mono">2024 – 2026</div>
         <div>
-          <h3>Research Assistant</h3>
-          <div class="org">Middlebury Economics, with Prof. Erick Gong</div>
+          <h3><a class="ext" href="https://www.middlebury.edu">Middlebury Economics</a></h3>
+          <div class="org">Research Assistant, with Prof. Erick Gong</div>
           <p>Studied how 1961 Freedom Ride stops relate to county-level voter registration and violence. Built an OCR pipeline to turn archival records into Stata-ready data, then a 3,100-county panel with Census controls.</p>
         </div>
       </div>
       <div class="row">
         <div class="when mono">Summer 2025</div>
         <div>
-          <h3>STEM Instructor</h3>
-          <div class="org">Brown University</div>
+          <h3><a class="ext" href="https://www.brown.edu">Brown University</a></h3>
+          <div class="org">STEM Instructor</div>
           <p>Taught computer science and maths to rising high schoolers through Python and hands-on coding labs.</p>
         </div>
       </div>
       <div class="row">
         <div class="when mono">Aug – Dec 2023</div>
         <div>
-          <h3>Data Analyst Extern</h3>
-          <div class="org">HP Tech Ventures</div>
+          <h3>HP Tech Ventures</h3>
+          <div class="org">Data Analyst Extern</div>
           <p>Automated PitchBook and Crunchbase data pulls for 50+ startups in Python (10% faster) and built Monte Carlo forecasts for 10 companies.</p>
         </div>
       </div>
       <div class="row">
         <div class="when mono">2023 – 2024</div>
         <div>
-          <h3>Project Lead</h3>
-          <div class="org">V&amp;A Waterfront, Cape Town</div>
+          <h3><a class="ext" href="https://www.waterfront.co.za">V&amp;A Waterfront</a></h3>
+          <div class="org">Project Lead · Cape Town</div>
           <p>Built geospatial income maps in Stata to find high-growth entrepreneurial zones, contributing to an 8% rise in venture capital inflows.</p>
         </div>
       </div>
@@ -189,15 +185,16 @@
       <div class="row">
         <div class="when mono">2024 – now</div>
         <div>
-          <h3>How To Want Better Things</h3>
-          <div class="org">Podcast and book</div>
-          <p>A podcast on cause areas, epistemics and forecasting, plus a book on impact-oriented careers as an alternative to prestige-driven ones. Essays published in campus papers and the Addison Independent.</p>
+          <h3><a class="ext" href="https://howtowantbetterthings.org/">How To Want Better Things</a></h3>
+          <div class="org">Podcast and book · Creator</div>
+          <p>A podcast on cause areas, epistemics and forecasting, plus a book on impact-oriented careers as an alternative to prestige-driven ones. Essays published in campus papers and the <a href="https://www.addisonindependent.com">Addison Independent</a>.</p>
+          <p><a class="ext" href="https://open.spotify.com/show/0i1Z5RwPdAEgjAhKV4cOAK">Listen on Spotify</a></p>
         </div>
       </div>
       <div class="row">
         <div class="when mono">2021 – now</div>
         <div>
-          <h3>Effective Altruism @ Midd</h3>
+          <h3><a class="ext" href="https://www.effectivealtruism.org">Effective Altruism @ Midd</a></h3>
           <div class="org">Organizer</div>
           <p>15+ workshops, reading groups and fellowships with 100+ participants. Also got the dining hall to pilot mushroom-blended burgers.</p>
         </div>
@@ -205,7 +202,7 @@
       <div class="row">
         <div class="when mono">2023 – now</div>
         <div>
-          <h3>Giving What We Can</h3>
+          <h3><a class="ext" href="https://www.givingwhatwecan.org">Giving What We Can</a></h3>
           <div class="org">Pledge advocate</div>
           <p>Tabled regularly at Middlebury, at several EA conferences, and now at Oxford, talking with people one-to-one about giving 1% or 10% of their income. 120+ have signed a pledge.</p>
         </div>
@@ -227,22 +224,26 @@
       <div class="row">
         <div class="when mono">Exp. Dec 2026</div>
         <div>
-          <h3>B.A. Computer Science</h3>
-          <div class="org">Middlebury College · GPA 3.8</div>
+          <h3><a class="ext" href="https://www.middlebury.edu">Middlebury College</a></h3>
+          <div class="org">B.A. Computer Science · GPA 3.8</div>
           <p>Davis Scholar, College Scholar, Dean's Scholar, Leibowitz French Scholar. Quant trading, economic statistics, software development, machine learning.</p>
         </div>
       </div>
       <div class="row">
         <div class="when mono">Autumn 2026</div>
-        <div><h3>CMRS Program</h3><div class="org">Oxford University</div></div>
+        <div><h3><a class="ext" href="https://www.ox.ac.uk">University of Oxford</a></h3><div class="org">CMRS Program</div></div>
       </div>
       <div class="row">
-        <div class="when mono">2024</div>
-        <div><h3>Semester at Sea · School of French</h3><div class="org">Study abroad and Middlebury summer immersion</div></div>
+        <div class="when mono">Summer 2024</div>
+        <div><h3><a class="ext" href="https://www.middlebury.edu/language-schools/french">Middlebury School of French</a></h3><div class="org">Language immersion</div></div>
+      </div>
+      <div class="row">
+        <div class="when mono">Spring 2024</div>
+        <div><h3><a class="ext" href="https://www.semesteratsea.org">Semester at Sea</a></h3><div class="org">Study abroad</div></div>
       </div>
       <div class="row">
         <div class="when mono">2019 – 2021</div>
-        <div><h3>United World College Costa Rica</h3><div class="org">Davis Scholar, IB</div></div>
+        <div><h3><a class="ext" href="https://www.uwccr.org">UWC Costa Rica</a></h3><div class="org">IB · Davis Scholar</div></div>
       </div>
       <dl class="tools" style="margin-top:28px">
         <dt class="mono">Tools</dt><dd>Stata, R, Python, SQL, Java, Matlab, financial modelling</dd>
@@ -254,7 +255,7 @@
   <section id="contact" class="reveal">
     <div class="label mono"><span>05</span>Contact</div>
     <div>
-      <a class="big-mail" href="mailto:cpschroeder@middlebury.edu">cpschroeder@middlebury.edu</a>
+      <a class="big-mail" href="mailto:camielschroeder@gmail.com">camielschroeder@gmail.com</a>
       <p class="small" style="margin-top:20px"><a href="https://linkedin.com/in/camiel-schroeder/">LinkedIn</a></p>
     </div>
   </section>
