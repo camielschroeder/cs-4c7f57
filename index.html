@@ -1,0 +1,274 @@
+TEST123<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camiel Schroeder</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Camiel Schroeder — computer science, economics research, effective altruism.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f3f0e8; --ink: #16150f; --mute: #7a766a; --rule: #d9d4c5; --hot: #e2461c;
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: "Hanken Grotesk", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #11100c; --ink: #efebe0; --mute: #8f8a7b; --rule: #2b2922; --hot: #ff6a3d; }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--hot); color: var(--paper); }
+  a { color: inherit; text-decoration: none; background: linear-gradient(var(--hot), var(--hot)) 0 100% / 0 1px no-repeat; transition: background-size .25s, color .2s; }
+  a:hover { background-size: 100% 1px; color: var(--hot); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--mute); }
+
+  /* top bar */
+  .bar { display: flex; justify-content: space-between; padding: 28px 0; }
+  .bar nav { display: flex; gap: 28px; }
+
+  /* hero */
+  .hero { padding: 9vh 0 10vh; }
+  h1 { font: 400 clamp(4.2rem, 14.5vw, 11.5rem)/.86 var(--serif); letter-spacing: -.035em; margin: 0; }
+  h1 em { font-style: italic; color: var(--hot); }
+  .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 56px; align-items: end; }
+  .intro p { margin: 0; font-size: 1.25rem; line-height: 1.45; max-width: 24em; }
+  .now { justify-self: end; text-align: right; display: grid; gap: 4px; }
+  .now b { font-weight: 500; color: var(--ink); text-transform: none; letter-spacing: 0; font-family: var(--sans); font-size: 15px; }
+
+  /* sections */
+  section { display: grid; grid-template-columns: 200px 1fr; gap: 32px; padding: 44px 0 56px; border-top: 1px solid var(--ink); }
+  section > .label { position: sticky; top: 24px; align-self: start; }
+  .label span { color: var(--hot); margin-right: 10px; }
+
+  .row { display: grid; grid-template-columns: 130px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--rule); transition: padding-left .25s; }
+  .row:first-child { padding-top: 0; }
+  .row:last-child { border-bottom: 0; }
+  .row:hover { padding-left: 10px; }
+  .row:hover h3 { color: var(--hot); }
+  .row h3 { font: 400 1.7rem/1.15 var(--serif); margin: 0 0 2px; transition: color .2s; }
+  .row .org { color: var(--mute); font-size: 15px; margin-bottom: 8px; }
+  .row p { margin: 0; max-width: 40em; }
+  .row p + p { margin-top: 8px; }
+  .row .when { padding-top: 6px; }
+
+  .about { font: 400 clamp(1.7rem, 3.4vw, 2.5rem)/1.2 var(--serif); letter-spacing: -.01em; margin: 0 0 24px; }
+  .about em { color: var(--hot); }
+  .small { color: var(--mute); max-width: 36em; margin: 0; }
+
+  .tools { display: grid; grid-template-columns: 130px 1fr; gap: 12px 24px; margin: 0; }
+  .tools dt { padding-top: 3px; }
+  .tools dd { margin: 0; }
+
+  .big-mail { font: 400 clamp(1.8rem, 5.2vw, 3.6rem)/1.05 var(--serif); letter-spacing: -.02em; word-break: break-word; }
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--ink); display: flex; justify-content: space-between; }
+
+  /* gentle reveal */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } * { scroll-behavior: auto !important; } }
+
+  @media (max-width: 760px) {
+    .wrap { padding: 0 20px; }
+    .bar nav { gap: 16px; }
+    .intro { grid-template-columns: 1fr; }
+    .now { justify-self: start; text-align: left; }
+    section { grid-template-columns: 1fr; gap: 20px; }
+    section > .label { position: static; }
+    .row, .tools { grid-template-columns: 1fr; gap: 2px; }
+    .row .when { padding-top: 0; }
+  }
+  @media print { .bar nav, .reveal { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="bar mono">
+    <span>Middlebury, VT / Oxford, UK</span>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#study">Study</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <h1>Camiel<br><em>Schroeder</em></h1>
+    <div class="intro">
+      <p>Economics research, code, and a long-running attempt to work out where a career does the most good.</p>
+      <div class="now mono">
+        <span>Now</span>
+        <b>Joining Analysis Group full-time, spring 2027</b>
+        <b>Studying at Oxford, autumn 2026</b>
+        <b>Research Coordinator, Research Impact Oxford</b>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="reveal">
+    <div class="label mono"><span>01</span>About</div>
+    <div>
+      <p class="about">I study computer science at Middlebury, but most of my time goes to <em>econometrics</em>, running things I care about, and a podcast about wanting better things.</p>
+      <p class="small">Recent work includes damages models for antitrust, biopharma and tax cases at Analysis Group, a county-level dataset built from scans of 1961 Freedom Ride archives, and a summer teaching Python to high school students at Brown. Outside class I organise Effective Altruism events at Middlebury and have fundraised for the Against Malaria Foundation. I'm still learning most of this as I go.</p>
+    </div>
+  </section>
+
+  <section id="work" class="reveal">
+    <div class="label mono"><span>02</span>Work</div>
+    <div>
+      <div class="row">
+        <div class="when mono">From spring 2027</div>
+        <div>
+          <h3>Analyst</h3>
+          <div class="org">Analysis Group · full-time</div>
+          <p>Returning after my summer analyst role to join full-time.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">Sep – Dec 2026</div>
+        <div>
+          <h3>Research Coordinator</h3>
+          <div class="org">Research Impact Oxford</div>
+          <p>Recruiting mentors in AI safety, AI governance and animal welfare via EAG outreach, then helping mentors and mentees scope projects and keep each other accountable.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">Jun – Aug 2026</div>
+        <div>
+          <h3>Summer Analyst</h3>
+          <div class="org">Analysis Group, Washington DC</div>
+          <p>Estimated counterfactual "but-for" outcomes across 4 antitrust, biopharma and tax matters, using regression models in R and Stata on 500,000+ observations.</p>
+          <p>Cleaned and merged 10k+ raw sources per matter and used fixed-effects panel models to isolate causal effects, producing damages estimates from $40M to $500M.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">2024 – 2026</div>
+        <div>
+          <h3>Research Assistant</h3>
+          <div class="org">Middlebury Economics, with Prof. Erick Gong</div>
+          <p>Studied how 1961 Freedom Ride stops relate to county-level voter registration and violence. Built an OCR pipeline to turn archival records into Stata-ready data, then a 3,100-county panel with Census controls.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">Summer 2025</div>
+        <div>
+          <h3>STEM Instructor</h3>
+          <div class="org">Brown University</div>
+          <p>Taught computer science and maths to rising high schoolers through Python and hands-on coding labs.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">Aug – Dec 2023</div>
+        <div>
+          <h3>Data Analyst Extern</h3>
+          <div class="org">HP Tech Ventures</div>
+          <p>Automated PitchBook and Crunchbase data pulls for 50+ startups in Python (10% faster) and built Monte Carlo forecasts for 10 companies.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">2023 – 2024</div>
+        <div>
+          <h3>Project Lead</h3>
+          <div class="org">V&amp;A Waterfront, Cape Town</div>
+          <p>Built geospatial income maps in Stata to find high-growth entrepreneurial zones, contributing to an 8% rise in venture capital inflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="label mono"><span>03</span>Projects</div>
+    <div>
+      <div class="row">
+        <div class="when mono">2024 – now</div>
+        <div>
+          <h3>How To Want Better Things</h3>
+          <div class="org">Podcast and book</div>
+          <p>A podcast on cause areas, epistemics and forecasting, plus a book on impact-oriented careers as an alternative to prestige-driven ones. Essays published in campus papers and the Addison Independent.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">2021 – now</div>
+        <div>
+          <h3>Effective Altruism @ Midd</h3>
+          <div class="org">Organizer</div>
+          <p>15+ workshops, reading groups and fellowships with 100+ participants. Also got the dining hall to pilot mushroom-blended burgers.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">2023 – now</div>
+        <div>
+          <h3>Giving What We Can</h3>
+          <div class="org">Pledge advocate</div>
+          <p>Tabled regularly at Middlebury, at several EA conferences, and now at Oxford, talking with people one-to-one about giving 1% or 10% of their income. 120+ have signed a pledge.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">Winter 2025</div>
+        <div>
+          <h3>Quantitative trading systems</h3>
+          <div class="org">Course project</div>
+          <p>Equity backtesting in Matlab and Python with multiprocessing, calibrated on liquidity and volume ratios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="study" class="reveal">
+    <div class="label mono"><span>04</span>Study</div>
+    <div>
+      <div class="row">
+        <div class="when mono">Exp. Dec 2026</div>
+        <div>
+          <h3>B.A. Computer Science</h3>
+          <div class="org">Middlebury College · GPA 3.8</div>
+          <p>Davis Scholar, College Scholar, Dean's Scholar, Leibowitz French Scholar. Quant trading, economic statistics, software development, machine learning.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="when mono">Autumn 2026</div>
+        <div><h3>CMRS Program</h3><div class="org">Oxford University</div></div>
+      </div>
+      <div class="row">
+        <div class="when mono">2024</div>
+        <div><h3>Semester at Sea · School of French</h3><div class="org">Study abroad and Middlebury summer immersion</div></div>
+      </div>
+      <div class="row">
+        <div class="when mono">2019 – 2021</div>
+        <div><h3>United World College Costa Rica</h3><div class="org">Davis Scholar, IB</div></div>
+      </div>
+      <dl class="tools" style="margin-top:28px">
+        <dt class="mono">Tools</dt><dd>Stata, R, Python, SQL, Java, Matlab, financial modelling</dd>
+        <dt class="mono">Languages</dt><dd>English and Dutch (native), German and French (intermediate)</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <div class="label mono"><span>05</span>Contact</div>
+    <div>
+      <a class="big-mail" href="mailto:cpschroeder@middlebury.edu">cpschroeder@middlebury.edu</a>
+      <p class="small" style="margin-top:20px"><a href="https://linkedin.com/in/camiel-schroeder/">LinkedIn</a></p>
+    </div>
+  </section>
+
+  <footer class="mono">
+    <span>© <span id="y"></span> Camiel Schroeder</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
